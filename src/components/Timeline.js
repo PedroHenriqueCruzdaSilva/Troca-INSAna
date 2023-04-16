@@ -7,7 +7,7 @@ export const StyledTimeline = styled.div`
   overflow: hidden;
   h2 {
     font-size: 30px;
-    align-content: center;
+    text-align: center;
     margin-bottom: 16px;
     text-transform: capitalize;
   }
