@@ -5,17 +5,17 @@ import Menu from "../src/components/Menu";
 import { StyledTimeline } from "../src/components/Timeline";
 
 export default function HomePage() {
-  const estilosDaHomePage = { 
-        // backgroundColor: "red" 
-    };
+  const estilosDaHomePage = {
+    // backgroundColor: "red"
+  };
   return (
     <>
-        <CSSReset />
-        <div style={estilosDaHomePage}>
+      <CSSReset />
+      <div style={estilosDaHomePage}>
         <Menu />
         <Header />
         <Timeline playlists={config.playlists} />
-        </div>
+      </div>
     </>
   );
 }
@@ -38,14 +38,14 @@ const StyledHeader = styled.div`
 
 const StyledBanner = styled.div`
   background-color: #000000;
-  background-image: url(${ ({ bg }) => bg });
+  background-image: url(${({ bg }) => bg});
   height: 230px;
 `;
 
 function Header() {
   return (
     <StyledHeader>
-      <StyledBanner bg={ config.bg } />
+      <StyledBanner bg={config.bg} />
       <section className="user-info">
         <img
           className="perfil-foto"
