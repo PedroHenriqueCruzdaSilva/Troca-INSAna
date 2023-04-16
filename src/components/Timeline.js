@@ -34,27 +34,29 @@ export const StyledTimeline = styled.div`
       scroll-snap-type: x mandatory;
       a {
         margin-bottom: 10px;
-        border: 1px #000 dashed;
         width: 302px;
         scroll-snap-align: start;
         display: flex;
         flex-direction: column;
         align-items: center;
+        background-color: ${({ theme }) => theme.backgroundP};
+        border: 3px solid ${({ theme }) => theme.borderBase};
         img {
-          width: 300px;
-          border-bottom: 1px #000 dashed;
+          width: 298px;
+          border-bottom: 3px solid ${({ theme }) => theme.borderBase || "#e5e5e5"};
         }
         span {
           padding-top: 8px;
           display: block;
           font-size: 24px;
           padding: 10px;
-          color: ${({ theme }) => theme.textColorBase || "#222222"};
+          color: ${({ theme }) => theme.textColorP};
+          font-weight: bold;
         }
       }
     }
     div::-webkit-scrollbar {
-      background-color: rgb(0, 0, 0, 0.32);
+      background-color: ${({ theme }) => theme.scrollBar};
       width: 5px;
       border-top-right-radius: 5px;
       border-bottom-right-radius: 5px;
@@ -62,7 +64,7 @@ export const StyledTimeline = styled.div`
       border-bottom-left-radius: 5px;
     }
     div::-webkit-scrollbar-thumb {
-      background-color: #000;
+      background-color: ${({ theme }) => theme.scrollBarThumb};
       border-top-right-radius: 5px;
       border-bottom-right-radius: 5px;
       border-top-left-radius: 5px;

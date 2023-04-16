@@ -1,22 +1,14 @@
 import config from "../config.json";
 import styled from "styled-components";
-import { CSSReset } from "../src/components/CSSReset";
 import Menu from "../src/components/Menu";
 import { StyledTimeline } from "../src/components/Timeline";
 import { useState } from "react";
 
 export default function HomePage() {
-  const estilosDaHomePage = {
-    // backgroundColor: "red"
-    display: "flex",
-    flexDirection: "column",
-    flex: 1,
-  };
   const [valorDoFiltro, setValorDoFiltro] = useState("");
   return (
     <>
-      <CSSReset />
-      <div style={estilosDaHomePage}>
+      <div>
         <Menu
           valorDoFiltro={valorDoFiltro}
           setValorDoFiltro={setValorDoFiltro}
@@ -29,6 +21,8 @@ export default function HomePage() {
 }
 
 const StyledHeader = styled.div`
+  background-color: ${({ theme }) => theme.backgroundLevel1};
+
   .perfil-foto {
     width: 80px;
     height: 80px;
@@ -48,6 +42,7 @@ const StyledBanner = styled.div`
   background-image: url(${({ bg }) => bg});
   height: 230px;
   width: 100%;
+  margin-top: 55px;
 `;
 
 function Header() {
