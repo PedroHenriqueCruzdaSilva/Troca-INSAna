@@ -15,7 +15,7 @@ export const StyledTimeline = styled.div`
     font-weight: 500;
     object-fit: cover;
     width: 100%;
-    max-width: 250px;
+    max-width: 350px;
     height: 350px;
   }
   section {
@@ -24,22 +24,30 @@ export const StyledTimeline = styled.div`
     overflow: hidden;
     padding: 16px;
     div {
-      
       width: calc(100vw - 16px * 4);
       display: grid;
-      grid-gap: 16px;
+      grid-gap: calc(100px + 5px);
       grid-template-columns: repeat(auto-fill,minmax(200px,1fr));
       grid-auto-flow: column;
       grid-auto-columns: minmax(200px,1fr);
       overflow-x: scroll;
       scroll-snap-type: x mandatory;
       a {
+        border: 1px #000 dashed;
+        width: 302px;
         scroll-snap-align: start;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        img {
+          width: 300px;
+          border-bottom: 1px #000 dashed;
+        }
         span {
           padding-top: 8px;
           display: block;
-          font-size: 20px;
-          padding-right: 24px;
+          font-size: 24px;
+          padding: 10px;
           color: ${({ theme }) => theme.textColorBase || "#222222"};
         }
       }
