@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { CSSReset } from "../src/components/CSSReset";
 import Menu from "../src/components/Menu";
 import { StyledTimeline } from "../src/components/Timeline";
+import banner from '../assets/imgs/banner.png';
 
 export default function HomePage() {
   const estilosDaHomePage = { 
@@ -38,7 +39,7 @@ const StyledHeader = styled.div`
 function Header() {
   return (
     <StyledHeader>
-      {/*<img src="banner" />*/}
+      <img src={banner} />
       <section className="user-info">
         <img
           className="perfil-foto"
