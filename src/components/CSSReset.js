@@ -9,6 +9,7 @@ export const CSSReset = createGlobalStyle`
   }
   body {
     font-family: sans-serif;
+    overflow: auto;
   }
   /* NextJS */
   html {
@@ -19,6 +20,9 @@ export const CSSReset = createGlobalStyle`
   body {
     display: flex;
     flex: 1;
+  }
+  body::-webkit-scrollbar {
+    display: none;
   }
   #__next {
     display: flex;

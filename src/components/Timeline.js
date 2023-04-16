@@ -33,6 +33,7 @@ export const StyledTimeline = styled.div`
       overflow-x: scroll;
       scroll-snap-type: x mandatory;
       a {
+        margin-bottom: 10px;
         border: 1px #000 dashed;
         width: 302px;
         scroll-snap-align: start;
@@ -51,6 +52,21 @@ export const StyledTimeline = styled.div`
           color: ${({ theme }) => theme.textColorBase || "#222222"};
         }
       }
+    }
+    div::-webkit-scrollbar {
+      background-color: rgb(0, 0, 0, 0.32);
+      width: 5px;
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+    }
+    div::-webkit-scrollbar-thumb {
+      background-color: #000;
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
     }
   }
 `;
