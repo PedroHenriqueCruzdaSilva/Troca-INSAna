@@ -15,8 +15,8 @@ export const StyledTimeline = styled.div`
     font-weight: 500;
     object-fit: cover;
     width: 100%;
-    max-width: 210px;
-    height: auto;
+    max-width: 250px;
+    height: 350px;
   }
   section {
     width: 100%;
@@ -38,6 +38,7 @@ export const StyledTimeline = styled.div`
         span {
           padding-top: 8px;
           display: block;
+          font-size: 20px;
           padding-right: 24px;
           color: ${({ theme }) => theme.textColorBase || "#222222"};
         }

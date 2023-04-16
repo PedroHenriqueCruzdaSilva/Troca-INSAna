@@ -1,134 +1,28 @@
 {
-  "name": "Mario Souto (DevSoutinho)",
-  "description": "Lead Software Engineer",
-  "github": "omariosouto",
+  "name": "Pedro Henrique Cruz da Silva",
+  "description": "Front-End Student at Alura",
+  "github": "PedroHenriqueCruzdaSilva",
   "bg": "https://i.ibb.co/56JSVf7/banner.png",
   "playlists": {
-    "jogos": [
+    "Camisas": [
       {
-        "title": "Frostpunk - Neve e Steak tartare",
-        "url": "https://www.youtube.com/watch?v=QsqatJxAUtk",
-        "thumb": "https://img.youtube.com/vi/QsqatJxAUtk/hqdefault.jpg"
-      },
-      {
-        "title": "Frostpunk - Neve e Steak tartare",
-        "url": "https://www.youtube.com/watch?v=O8jtAyPuhNg",
-        "thumb": "https://img.youtube.com/vi/O8jtAyPuhNg/hqdefault.jpg"
-      },
-      {
-        "title": "Gas Station Simulator - 8 dias sem dormir!",
-        "url": "https://www.youtube.com/watch?v=R1d0DyRDG_Q",
-        "thumb": "https://img.youtube.com/vi/R1d0DyRDG_Q/hqdefault.jpg"
-      },
-      {
-        "title": "Gartic Phone - Não assista a esse NerdPlayer!",
-        "url": "https://www.youtube.com/watch?v=0oJQUs5oRiM",
-        "thumb": "https://img.youtube.com/vi/0oJQUs5oRiM/hqdefault.jpg"
-      },
-      {
-        "title": "Netdecking Estraga o Magic?",
-        "url": "https://www.youtube.com/watch?v=dXihyhYEsEc",
-        "thumb": "https://img.youtube.com/vi/dXihyhYEsEc/hqdefault.jpg"
-      },
-      {
-        "title": "Cities: Skylines - EPCOTAB, o futuro de Saint Laurrent",
-        "url": "https://www.youtube.com/watch?v=zybKHMgLCWU",
-        "thumb": "https://img.youtube.com/vi/zybKHMgLCWU/hqdefault.jpg"
-      },
-      {
-        "title": "We Were Here Together - Os Enigmas deste Mundo",
-        "url": "https://www.youtube.com/watch?v=UKgQsrHUG40",
-        "thumb": "https://img.youtube.com/vi/UKgQsrHUG40/hqdefault.jpg"
-      },
-      {
-        "title": "Microsoft Flight Simulator - Top Gun: Oceania - Missão RJ!",
-        "url": "https://www.youtube.com/watch?v=n3TneUb5c-w",
-        "thumb": "https://img.youtube.com/vi/n3TneUb5c-w/hqdefault.jpg"
+        "title": "Camisa Marrom",
+        "slug": "Camisa-Marrom",
+        "thumb": "data:image/jpeg;base64,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"
       }
     ],
-    "front-end": [
+    "Calças": [
       {
-        "title": "Jogo com JavaScript #01: Criando um Flappy Bird do ZERO!!!",
-        "url": "https://youtube.com/watch?v=jOAU81jdi-c",
-        "thumb": "https://img.youtube.com/vi/jOAU81jdi-c/hqdefault.jpg"
-      },
-      {
-        "title": "Jogo com JavaScript #01: Criando um Flappy Bird do ZERO!!!",
-        "url": "https://www.youtube.com/watch?v=llF6vD-RljE",
-        "thumb": "https://img.youtube.com/vi/llF6vD-RljE/hqdefault.jpg"
-      },
-      {
-        "title": "A Primeira Aula de Flutter Que Todo Mundo Deveria Ter",
-        "url": "https://www.youtube.com/watch?v=J4BVaXkwmM8",
-        "thumb": "https://img.youtube.com/vi/J4BVaXkwmM8/hqdefault.jpg"
-      },
-      {
-        "title": "O QUE SÃO FRAMEWORKS E BIBLIOTECAS? QUAIS AS DIFERENÇAS?",
-        "url": "https://www.youtube.com/watch?v=dp0zB4n3MUs",
-        "thumb": "https://img.youtube.com/vi/dp0zB4n3MUs/hqdefault.jpg"
-      },
-      {
-        "title": "Angular (O Vídeo que Você Precisava para Começar no Framework) // Dicionário do Programador",
-        "url": "https://www.youtube.com/watch?v=Yf0rC7dERjg",
-        "thumb": "https://img.youtube.com/vi/Yf0rC7dERjg/hqdefault.jpg"
-      },
-      {
-        "title": "Como Foi Programado um App Que Faz Mágica",
-        "url": "https://www.youtube.com/watch?v=I36seuWUe5s",
-        "thumb": "https://img.youtube.com/vi/I36seuWUe5s/hqdefault.jpg"
-      },
-      {
-        "title": "O que todo iniciante em Front End deveria aprender | Como manipular arrays e objetos em JavaScript",
-        "url": "https://www.youtube.com/watch?v=yS7AcF-xRUg",
-        "thumb": "https://img.youtube.com/vi/yS7AcF-xRUg/hqdefault.jpg"
-      },
-      {
-        "title": "5 Erros Históricos do CSS",
-        "url": "https://www.youtube.com/watch?v=HNjkqONzGS0",
-        "thumb": "https://img.youtube.com/vi/HNjkqONzGS0/hqdefault.jpg"
-      },
-      {
-        "title": "Deploy de Front End ATUALIZADO! | O que eu uso para hospedagem de Front End",
-        "url": "https://www.youtube.com/watch?v=d9c0r-J6CdM",
-        "thumb": "https://img.youtube.com/vi/d9c0r-J6CdM/hqdefault.jpg"
+        "title": "Calça Jeans Azul Claro",
+        "slug": "Calça-Jeans-Azul-Claro",
+        "thumb": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOdgZY70D0tUcmaViJ5gV96ZUQPgN2pQrWEQ&usqp=CAU"
       }
     ],
-    "back-end": [
+    "Shorts": [
       {
-        "title": "Node JS: Construindo CRUDs com file system focando em serialização e JSON",
-        "url": "https://www.youtube.com/watch?v=dvd3pNYh7So",
-        "thumb": "https://img.youtube.com/vi/dvd3pNYh7So/hqdefault.jpg"
-      },
-      {
-        "title": "Node JS: Construindo CRUDs com file system focando em serialização e JSON",
-        "url": "https://www.youtube.com/watch?v=8q36rNS5yVo",
-        "thumb": "https://img.youtube.com/vi/8q36rNS5yVo/hqdefault.jpg"
-      },
-
-      {
-        "title": "O que é o Java? #HipstersPontoTube",
-        "url": "https://www.youtube.com/watch?v=90NcVNsKGik",
-        "thumb": "https://img.youtube.com/vi/90NcVNsKGik/hqdefault.jpg"
-      },
-      {
-        "title": "O que é Machine Learning? #HipstersPontoTube",
-        "url": "https://www.youtube.com/watch?v=Iuz_jc96bQk",
-        "thumb": "https://img.youtube.com/vi/Iuz_jc96bQk/hqdefault.jpg"
-      },
-      {
-        "title": "A MELHOR linguagem de programação com Fabio Akita | #HipstersPontoTube",
-        "url": "https://www.youtube.com/watch?v=imB0QVoNrGc",
-        "thumb": "https://img.youtube.com/vi/imB0QVoNrGc/hqdefault.jpg"
-      },
-      {
-        "title": "Top 5 libs que todo aplicativo Android deve ter com Alex Felipe | #HipstersPontoTube",
-        "url": "https://www.youtube.com/watch?v=ldRbnpy-qQs",
-        "thumb": "https://img.youtube.com/vi/ldRbnpy-qQs/hqdefault.jpg"
-      },
-      {
-        "title": "O que é o C#? #HipstersPontoTube",
-        "url": "https://www.youtube.com/watch?v=0JWMVc1CqpA",
-        "thumb": "https://img.youtube.com/vi/0JWMVc1CqpA/hqdefault.jpg"
+        "title": "Shorts Adidas Preto",
+        "slug": "Shorts-Adidas-Preto",
+        "thumb": "https://assets.adidas.com/images/w_320,f_auto,q_auto,fl_lossy,c_fill,g_auto/6a0bbd20efb442ef9a63ac69014a890f_9366/Shorts_Esportivo_AEROREADY_Designed_2_Move_Preto_GT8161_01_laydown.jpg"
       }
     ]
   }
