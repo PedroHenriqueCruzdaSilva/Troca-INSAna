@@ -35,9 +35,17 @@ const StyledHeader = styled.div`
     gap: 16px;
   }
 `;
+
+const StyledBanner = styled.div`
+  background-color: #000000;
+  background-image: url(${ ({ bg }) => bg });
+  height: 230px;
+`;
+
 function Header() {
   return (
     <StyledHeader>
+      <StyledBanner bg={ config.bg } />
       <section className="user-info">
         <img
           className="perfil-foto"
