@@ -10,10 +10,16 @@ function useForm(propsDoForm) {
     handleChange: (e) => {
       const value = e.target.value;
       const name = e.target.name;
+      if (name === "imageUp") {
+        setValues({
+          ...values,
+          url: value,
+        });
+      } else {
       setValues({
         ...values,
         [name]: value,
-      });
+      }); }
     },
     clearForm() {
       setValues({});
@@ -23,7 +29,7 @@ function useForm(propsDoForm) {
 
 export default function RegisterVideo() {
   const formCadastro = useForm({
-    initialValues: { titulo: "", slug: "", email: "", desc: "" },
+    initialValues: { titulo: "", slug: "", email: "", desc: "", url: useForm.value },
   });
   const [images, setImages] = useState([]);
   const [imageURL, setImageURL] = useState([]);
@@ -107,10 +113,16 @@ export default function RegisterVideo() {
             />
             <label>Envie o arquivo do item</label>
             <input
+              name="imageUp"
               type="file"
               accept="image/png, image/jpeg"
               value={formCadastro.values.url}
-              onChange={onImageChange}
+              onChange={
+                () => {
+                  onImageChange
+                  formCadastro.handleChange
+                }
+              }
             />
             <button type="submit">Cadastrar Produto</button>
             {/* imageURL.map((imageSrc) => {
