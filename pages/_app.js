@@ -34,11 +34,13 @@ const theme = {
 
 function ProviderWrapper(props) {
   return (
-    <ColorModeProvider initialMode={"light"}>{props.children}</ColorModeProvider>
+    <ColorModeProvider initialMode={"light"}>
+      {props.children}
+    </ColorModeProvider>
   );
 }
 
-function MyApp({ Component, pageProps }) {
+function Root({ Component, pageProps }) {
   const contexto = useContext(colorModeContext);
 
   return (
@@ -52,7 +54,7 @@ function MyApp({ Component, pageProps }) {
 export default function _App(props) {
   return (
     <ProviderWrapper>
-      <MyApp {...props} />
+      <Root {...props} />
     </ProviderWrapper>
   );
 }

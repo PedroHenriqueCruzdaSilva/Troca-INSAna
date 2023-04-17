@@ -7,6 +7,7 @@ const StyledSearch = styled.div`
   border: 1px solid ${({ theme }) => theme.borderBase};
   max-width: 425px;
   width: 100%;
+  margin-right: -230px;
   border-radius: 2px;
   overflow: hidden;
 
