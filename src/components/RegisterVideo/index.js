@@ -10,16 +10,10 @@ function useForm(propsDoForm) {
     handleChange: (e) => {
       const value = e.target.value;
       const name = e.target.name;
-      if (name === "imageUp") {
-        setValues({
-          ...values,
-          url: value,
-        });
-      } else {
       setValues({
         ...values,
         [name]: value,
-      }); }
+      });
     },
     clearForm() {
       setValues({});
@@ -29,22 +23,8 @@ function useForm(propsDoForm) {
 
 export default function RegisterVideo() {
   const formCadastro = useForm({
-    initialValues: { titulo: "", slug: "", email: "", desc: "", url: useForm.value },
+    initialValues: { titulo: "", slug: "", email: "", desc: "" },
   });
-  const [images, setImages] = useState([]);
-  const [imageURL, setImageURL] = useState([]);
-
-  useEffect(() => {
-    if (images.length > 1) return;
-    if (images.length < 1) return;
-    const newImageURL = [];
-    images.forEach((image) => newImageURL.push(URL.createObjectURL(image)));
-    setImageURL(newImageURL);
-  }, [images]);
-
-  function onImageChange(e) {
-    setImages([...e.target.files]);
-  }
 
   const [formVisivel, setFormVisivel] = useState(false);
 
@@ -111,30 +91,7 @@ export default function RegisterVideo() {
               name="text-area"
               onChange={formCadastro.handleChange}
             />
-            <label>Envie o arquivo do item</label>
-            <input
-              name="imageUp"
-              type="file"
-              accept="image/png, image/jpeg"
-              value={formCadastro.values.url}
-              onChange={
-                () => {
-                  onImageChange
-                  formCadastro.handleChange
-                }
-              }
-            />
             <button type="submit">Cadastrar Produto</button>
-            {/* imageURL.map((imageSrc) => {
-              {
-                <img
-                  className="preview-imagem"
-                  value={imageURL}
-                  src={imageSrc}
-                />;
-              }
-            }) */
-            console.log(imageURL)}
           </div>
         </form>
       ) : (
