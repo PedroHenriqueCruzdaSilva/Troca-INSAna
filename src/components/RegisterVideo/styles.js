@@ -42,6 +42,7 @@ export const StyledRegisterVideo = styled.div`
     border-radius: 2px;
     cursor: pointer;
     color: inherit;
+    margin-top: 20px;
   }
   form {
     width: 100%;
@@ -91,5 +92,16 @@ export const StyledRegisterVideo = styled.div`
   }
   label {
     margin-bottom: 5px;
+  }
+  select {
+    border-radius: 2px;
+    border: 3px solid ${({ theme }) => theme.borderBase};
+    padding: 8px 10px;
+    margin-bottom: 10px;
+    outline: none;
+    color: #222222;
+    background-color: #f9f9f9;
+    color: ${({ theme }) => theme.textColorBase};
+    background-color: ${({ theme }) => theme.backgroundBase};
   }
 `;

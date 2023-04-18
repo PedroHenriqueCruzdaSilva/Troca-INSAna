@@ -1,11 +1,48 @@
+import React from "react";
 import config from "../config.json";
 import styled from "styled-components";
 import Menu from "../src/components/Menu";
 import { StyledTimeline } from "../src/components/Timeline";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+// import { createClient } from '@supabase/supabase-js'
+import { videoService } from "../src/services/videosService";
+const service = videoService();
+
+//const PROJECT_URL = "https://jkqecgkaxjgokqbrxyca.supabase.co";
+//const PROJECT_API_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImprcWVjZ2theGpnb2txYnJ4eWNhIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODE4NDAzMjQsImV4cCI6MTk5NzQxNjMyNH0.tQjw3aO93jl_-BQfCZ6DutzVMoMxsh3AWJOLj2pZB3c"
+//const supabase = createClient(PROJECT_URL, PROJECT_API_KEY)
 
 export default function HomePage() {
   const [valorDoFiltro, setValorDoFiltro] = useState("");
+  const [playlists, setPlaylists] = React.useState({});
+  /* const playlists = {
+    "Camisas": [],
+    "Calças": [],
+    "Shorts": [],
+    "Meias": [],
+    "Blusas": [],
+    "Tênis": []
+  } */
+
+  React.useEffect(() => {
+    //console.log("useEffect");
+    service.getAllVideos().then((dados) => {
+      //console.log(dados.data);
+      // Forma imutavel
+      const novasPlaylists = {};
+      dados.data.forEach((video) => {
+        if (!novasPlaylists[video.playlist])
+          novasPlaylists[video.playlist] = [];
+        novasPlaylists[video.playlist] = [
+          video,
+          ...novasPlaylists[video.playlist],
+        ];
+      });
+
+      setPlaylists(novasPlaylists);
+    });
+  }, []);
+
   return (
     <>
       <div>
@@ -14,7 +51,7 @@ export default function HomePage() {
           setValorDoFiltro={setValorDoFiltro}
         />
         <Header />
-        <Timeline valorDoFiltro={valorDoFiltro} playlists={config.playlists} />
+        <Timeline valorDoFiltro={valorDoFiltro} playlists={playlists} />
       </div>
     </>
   );
@@ -65,6 +102,8 @@ function Header() {
 
 function Timeline({ valorDoFiltro, ...props }) {
   const playlistNames = Object.keys(props.playlists);
+  // const playlistNames = props.playlists?.length > 0 ? Object.keys(props.playlists) : [];
+
   return (
     <StyledTimeline>
       {playlistNames.map((playlistName) => {
