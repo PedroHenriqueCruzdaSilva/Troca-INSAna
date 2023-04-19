@@ -8,6 +8,7 @@ import ColorModeProvider, {
 const theme = {
   light: {
     backgroundBase: "#f9f9f9",
+    backgroundItem: "#fff",
     backgroundLevel1: "#f0f0f0",
     backgroundLevel2: "#f0f0f0",
     borderBase: "#e5e5e5",
@@ -20,6 +21,7 @@ const theme = {
   },
   dark: {
     backgroundBase: "#181818",
+    backgroundItem: "#1a1a1a",
     backgroundLevel1: "#202020",
     backgroundLevel2: "#313131",
     borderBase: "#383838",

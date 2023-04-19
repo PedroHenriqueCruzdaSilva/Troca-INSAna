@@ -46,6 +46,7 @@ export const StyledRegisterVideo = styled.div`
   }
   form {
     width: 100%;
+    height: 100%;
     padding: 5%;
     background-color: rgba(0, 0, 0, 0.5);
     position: fixed;
@@ -60,6 +61,7 @@ export const StyledRegisterVideo = styled.div`
       flex: 1;
       border-radius: 8px;
       max-width: 520px;
+      max-height: 700px;
       background-color: ${({ theme }) => theme.backgroundLevel2};
       display: flex;
       flex-direction: column;
@@ -97,6 +99,7 @@ export const StyledRegisterVideo = styled.div`
     border-radius: 2px;
     border: 3px solid ${({ theme }) => theme.borderBase};
     padding: 8px 10px;
+    margin-top: -30px;
     margin-bottom: 10px;
     outline: none;
     color: #222222;

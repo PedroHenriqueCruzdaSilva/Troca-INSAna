@@ -30,7 +30,7 @@ export default function RegisterVideo() {
   const formCadastro = useForm({
     initialValues: {
       titulo: "",
-      slug: "",
+      password: "",
       email: "",
       desc: "",
       categoria: "Camisas",
@@ -57,18 +57,19 @@ export default function RegisterVideo() {
               .from("itens")
               .insert({
                 title: formCadastro.values.titulo,
-                slug: formCadastro.values.slug,
                 email: formCadastro.values.email,
                 desc: formCadastro.values.desc,
                 thumb: formCadastro.values.thumb,
+                password: formCadastro.values.password,
                 playlist: formCadastro.values.categoria,
               })
               .then((oqueveio) => {
-                oqueveio
+                oqueveio;
               })
               .catch((err) => {
                 console.log(err);
               });
+            window.location.reload();
             formCadastro.clearForm();
             setFormVisivel(false);
           }}
@@ -87,16 +88,6 @@ export default function RegisterVideo() {
               placeholder="Título do item"
               value={formCadastro.values.titulo}
               name="titulo"
-              onChange={formCadastro.handleChange}
-            />
-            <label>
-              Confirme o Titulo para que não aja erros no cadastramento, utilize
-              - no lugar dos espaços em brancos
-            </label>
-            <input
-              placeholder="Confirme o titulo"
-              value={formCadastro.values.slug}
-              name="slug"
               onChange={formCadastro.handleChange}
             />
             <label>
@@ -121,11 +112,28 @@ export default function RegisterVideo() {
             <label>Insira a Url da imagem do produto</label>
             <input
               type="text"
-              placeholder="URL"
               name="thumb"
               value={formCadastro.values.thumb}
               onChange={formCadastro.handleChange}
             />
+            {/*<input
+              type="file"
+              name="thumb"
+              onChange={async (e) => {
+                const file = e.target.files[0];
+                const { data, error } = await supabase.storage
+                  .from("images")
+                  .upload(`itens/${file.name}`, file);
+                if (error) {
+                  console.log(error);
+                } else {
+                  setValues({
+                    ...values,
+                    thumb: data.Key,
+                  });
+                }
+              }}
+            /> */}
             <label>Selecione a categoria:</label>
             <select
               name="categoria"
@@ -139,6 +147,8 @@ export default function RegisterVideo() {
               <option value="Blusas">Blusas</option>
               <option value="Tênis">Tênis</option>
             </select>
+            <label>Adicione uma senha para deletar o produto após a troca</label>
+            <input placeholder="password" type="password" name="password" value={formCadastro.values.password} onChange={formCadastro.handleChange} />
             <button type="submit">Cadastrar Produto</button>
           </div>
         </form>
