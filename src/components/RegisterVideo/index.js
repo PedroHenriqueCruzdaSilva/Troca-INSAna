@@ -1,12 +1,6 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { StyledRegisterVideo } from "./styles";
 import { createClient } from "@supabase/supabase-js";
-// import { StorageClient } from "@supabase/storage-js";
-// import Button from '';
-// preciso que import o StorageClient e o use para upar uma imagem ao banco de dados do Supabase chamado images
-// import { useForm }
-
-// import { StorageClient } from "@supabase/storage-js";
 
 function useForm(propsDoForm) {
   const [values, setValues] = useState(propsDoForm.initialValues);
@@ -21,21 +15,6 @@ function useForm(propsDoForm) {
         [name]: value,
       });
     },
-    /*handleImageChange: async (e) => {
-      const file = e.target.files[0];
-      const { data, error } = await supabase.storage.from("/images").upload(`${file.name}`, file, {
-        contentType: file.type
-      });
-      console.log(data, error)
-      if (error) {
-        console.log(error);
-      } else {
-        setValues({
-          ...values,
-          thumb: data.Key,
-        });
-      }
-    },*/
     clearForm() {
       setValues({});
     },
@@ -46,25 +25,6 @@ const PROJECT_URL = "https://jkqecgkaxjgokqbrxyca.supabase.co";
 const PROJECT_API_KEY =
   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImprcWVjZ2theGpnb2txYnJ4eWNhIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODE4NDAzMjQsImV4cCI6MTk5NzQxNjMyNH0.tQjw3aO93jl_-BQfCZ6DutzVMoMxsh3AWJOLj2pZB3c";
 const supabase = createClient(PROJECT_URL, PROJECT_API_KEY);
-// const storage = new StorageClient(PROJECT_URL, PROJECT_API_KEY);
-
-// const storage = new StorageClient(PROJECT_URL, PROJECT_API_KEY);
-
-/* function handleImageUpload(event) {
-  const file = event.target.files[0];
-  const storagePath = `products/${file.name}`;
-
-  storage
-    .from("images")
-    .upload(storagePath, file)
-    .then(({ data }) => {
-      const imageUrl = `${supabaseUrl}/storage/v1/public/${storagePath}`;
-      console.log(imageUrl); // use the image URL as needed
-    })
-    .catch((error) => {
-      console.log(error);
-    });
-} */
 
 export default function RegisterVideo() {
   const formCadastro = useForm({
@@ -93,36 +53,6 @@ export default function RegisterVideo() {
       {formVisivel ? (
         <form
           onSubmit={async (e) => {
-            // e.preventDefault();
-
-            /* const { data: thumbUrl, error } = await storage.from("/images").getPublicUrl(formCadastro.values.thumb);
-            if (error) {
-              console.log(error);
-            }
-            supabase
-              .from("itens")
-              .insert({
-                title: formCadastro.values.titulo,
-                slug: formCadastro.values.slug,
-                email: formCadastro.values.email,
-                desc: formCadastro.values.desc,
-                thumb: thumbUrl,
-                playlist: formCadastro.values.categoria,
-              })
-               .then((oqueveio) => {
-                // console.log(oqueveio);
-                formCadastro.clearForm()
-                setFormVisivel(false)
-              }
-              )
-              .catch((err) => {
-                console.log(err);
-              }) */
-            /* const { data: thumbUrl, error } = await storage.from("/images").getPublicUrl(formCadastro.values.thumb);
-
-            if (error) {
-              console.log(error);
-            } else { */
             supabase
               .from("itens")
               .insert({
@@ -134,23 +64,13 @@ export default function RegisterVideo() {
                 playlist: formCadastro.values.categoria,
               })
               .then((oqueveio) => {
-                // console.log(oqueveio);
+                oqueveio
               })
               .catch((err) => {
                 console.log(err);
               });
             formCadastro.clearForm();
             setFormVisivel(false);
-
-            /*} .then((oqueveio) => {
-              console.log(oqueveio)
-            })
-            .catch((err) => {
-              console.log(err)
-            })*/
-
-            //setFormVisivel(false);
-            //formCadastro.clearForm();
           }}
         >
           <div>
