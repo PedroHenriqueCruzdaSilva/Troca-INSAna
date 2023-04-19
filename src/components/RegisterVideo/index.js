@@ -30,7 +30,7 @@ export default function RegisterVideo() {
   const formCadastro = useForm({
     initialValues: {
       titulo: "",
-      password: "",
+      // password: "",
       email: "",
       desc: "",
       categoria: "Camisas",
@@ -60,16 +60,16 @@ export default function RegisterVideo() {
                 email: formCadastro.values.email,
                 desc: formCadastro.values.desc,
                 thumb: formCadastro.values.thumb,
-                password: formCadastro.values.password,
+                // password: formCadastro.values.password,
                 playlist: formCadastro.values.categoria,
               })
               .then((oqueveio) => {
                 oqueveio;
+                window.location.reload();
               })
               .catch((err) => {
                 console.log(err);
               });
-            window.location.reload();
             formCadastro.clearForm();
             setFormVisivel(false);
           }}
@@ -147,8 +147,8 @@ export default function RegisterVideo() {
               <option value="Blusas">Blusas</option>
               <option value="Tênis">Tênis</option>
             </select>
-            <label>Adicione uma senha para deletar o produto após a troca</label>
-            <input placeholder="password" type="password" name="password" value={formCadastro.values.password} onChange={formCadastro.handleChange} />
+            {/*<label>Adicione uma senha para deletar o produto após a troca</label>
+            <input placeholder="password" type="password" name="password" value={formCadastro.values.password} onChange={formCadastro.handleChange} />*/}
             <button type="submit">Cadastrar Produto</button>
           </div>
         </form>
