@@ -4,6 +4,7 @@ import { useContext } from "react";
 import ColorModeProvider, {
   colorModeContext,
 } from "../src/components/Menu/components/ColorMode";
+import { Helmet } from "react-helmet";
 
 const theme = {
   light: {
@@ -56,6 +57,9 @@ function Root({ Component, pageProps }) {
 export default function _App(props) {
   return (
     <ProviderWrapper>
+      <Helmet>
+        <title>Troca INSAna</title>
+      </Helmet>
       <Root {...props} />
     </ProviderWrapper>
   );

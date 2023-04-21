@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { StyledRegisterVideo } from "./styles";
 import { createClient } from "@supabase/supabase-js";
 
@@ -112,8 +112,6 @@ export default function RegisterVideo() {
             <label>Insira a Url da imagem do produto</label>
             <input
               type="text"
-              name="thumb"
-              value={formCadastro.values.thumb}
               onChange={formCadastro.handleChange}
             />
             {/*<input
