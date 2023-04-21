@@ -4,7 +4,8 @@ import { useContext } from "react";
 import ColorModeProvider, {
   colorModeContext,
 } from "../src/components/Menu/components/ColorMode";
-import { Helmet } from "react-helmet";
+// import { Helmet } from "react-helmet";
+import Head from "next/head";
 
 const theme = {
   light: {
@@ -57,9 +58,13 @@ function Root({ Component, pageProps }) {
 export default function _App(props) {
   return (
     <ProviderWrapper>
-      <Helmet>
+      {/*<Helmet>
         <title>Troca INSAna</title>
-      </Helmet>
+      </Helmet>*/}
+      <Head>
+        <title>Troca INSAna</title>
+        <link rel="shortcut icon" href='favicon/favicon.ico' />
+      </Head>
       <Root {...props} />
     </ProviderWrapper>
   );
