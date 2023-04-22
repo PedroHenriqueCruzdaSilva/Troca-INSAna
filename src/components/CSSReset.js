@@ -41,4 +41,7 @@ export const CSSReset = createGlobalStyle`
       opacity: .5;
     }
   }
+  .Page {
+    width: 100%;
+  }
 `;

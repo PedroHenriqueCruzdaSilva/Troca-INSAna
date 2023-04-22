@@ -46,22 +46,20 @@ export default function HomePage() {
   }, []);
 
   return (
-    <>
-      <div>
+    <div className="Page">
         <Menu
           valorDoFiltro={valorDoFiltro}
           setValorDoFiltro={setValorDoFiltro}
         />
         <Header />
         <Timeline valorDoFiltro={valorDoFiltro} playlists={playlists} />
-      </div>
-    </>
+    </div>
   );
 }
 
 const StyledHeader = styled.div`
   background-color: ${({ theme }) => theme.backgroundLevel1};
-
+  width: 100%;
   .perfil-foto {
     width: 80px;
     height: 80px;
