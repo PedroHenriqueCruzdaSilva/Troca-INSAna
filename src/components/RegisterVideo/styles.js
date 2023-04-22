@@ -61,7 +61,7 @@ export const StyledRegisterVideo = styled.div`
       flex: 1;
       border-radius: 8px;
       max-width: 520px;
-      max-height: 700px;
+      max-height: 900px;
       background-color: ${({ theme }) => theme.backgroundLevel2};
       display: flex;
       flex-direction: column;

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { StyledRegisterVideo } from "./styles";
 import { createClient } from "@supabase/supabase-js";
 
@@ -25,6 +25,7 @@ const PROJECT_URL = "https://jkqecgkaxjgokqbrxyca.supabase.co";
 const PROJECT_API_KEY =
   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImprcWVjZ2theGpnb2txYnJ4eWNhIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODE4NDAzMjQsImV4cCI6MTk5NzQxNjMyNH0.tQjw3aO93jl_-BQfCZ6DutzVMoMxsh3AWJOLj2pZB3c";
 const supabase = createClient(PROJECT_URL, PROJECT_API_KEY);
+// const CDNURL = "https://app.supabase.com/project/jkqecgkaxjgokqbrxyca/storage/buckets/images";
 
 export default function RegisterVideo() {
   const formCadastro = useForm({
@@ -60,7 +61,8 @@ export default function RegisterVideo() {
                 email: formCadastro.values.email,
                 desc: formCadastro.values.desc,
                 thumb: formCadastro.values.thumb,
-                // password: formCadastro.values.password,
+                password: formCadastro.values.password,
+                // thumb: CDNURL + "/" + images.name,
                 playlist: formCadastro.values.categoria,
               })
               .then((oqueveio) => {
@@ -91,8 +93,7 @@ export default function RegisterVideo() {
               onChange={formCadastro.handleChange}
             />
             <label>
-              Insire vosso e-mail para quem desejar seu produto possa entrar em
-              contato para trocalo por outro
+              Insira seu e-mail para alguem entrar em contato com você e trocar  o item por outro
             </label>
             <input
               type="email"
@@ -112,26 +113,11 @@ export default function RegisterVideo() {
             <label>Insira a Url da imagem do produto</label>
             <input
               type="text"
+              name="thumb"
               onChange={formCadastro.handleChange}
             />
-            {/*<input
-              type="file"
-              name="thumb"
-              onChange={async (e) => {
-                const file = e.target.files[0];
-                const { data, error } = await supabase.storage
-                  .from("images")
-                  .upload(`itens/${file.name}`, file);
-                if (error) {
-                  console.log(error);
-                } else {
-                  setValues({
-                    ...values,
-                    thumb: data.Key,
-                  });
-                }
-              }}
-            /> */}
+            { /*<label>Insira a imagem do produto</label>
+            <input type="file" accept="image/*" name="thumb" onChange={(e) => uploadImage(e)} /> */}
             <label>Selecione a categoria:</label>
             <select
               name="categoria"
@@ -145,8 +131,8 @@ export default function RegisterVideo() {
               <option value="Blusas">Blusas</option>
               <option value="Tênis">Tênis</option>
             </select>
-            {/*<label>Adicione uma senha para deletar o produto após a troca</label>
-            <input placeholder="password" type="password" name="password" value={formCadastro.values.password} onChange={formCadastro.handleChange} />*/}
+            {/*<label>Insira uma senha para deletar após a troca</label>
+            <input type="password" name="password" onChange={formCadastro.handleChange} />*/}
             <button type="submit">Cadastrar Produto</button>
           </div>
         </form>
