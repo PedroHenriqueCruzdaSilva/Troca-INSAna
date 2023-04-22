@@ -118,7 +118,7 @@ export const StyledRegisterVideo = styled.div`
       // margin-right: -106px;
       // margin-left: 70px;
       border: 0;
-      margin-top: 179.8%;
+      margin-top: 169.8%;
       margin-left: 21.2%;
       background-color: rgb(0, 74, 173);
       border-radius: 50%;
