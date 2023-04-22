@@ -140,10 +140,6 @@ const StyledDivV = styled.div`
   }
   .infoD {
     padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     h3 {
       font-size: 25px;
       margin-bottom: 20px;
@@ -156,30 +152,6 @@ const StyledDivV = styled.div`
     input {
       width: 100%;
       height: 25px;
-    }
-    .divForm {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      .delet {
-        margin-top: 6%;
-        border: none;
-        background-color: blue;
-        font-size: 15px;
-        color: #fff;
-        padding: 8px;
-        border-radius: 8px;
-        cursor: pointer;
-      }
-      .delet:hover {
-        background-color: red;
-        color: #fff;
-      }
-      input {
-        margin-top: 6%;
-        margin-left: -50%;
-        width: 200%;
-      }
     }
   }
   @media (max-width: 768px) {
