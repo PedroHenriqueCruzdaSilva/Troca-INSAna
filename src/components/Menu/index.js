@@ -25,6 +25,9 @@ const StyledMenu = styled.header`
       fill: ${({ theme }) => theme.textColorBase || "#222222"};
     }
   }
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `;
 
 export default function Menu({ valorDoFiltro, setValorDoFiltro }) {
@@ -33,7 +36,7 @@ export default function Menu({ valorDoFiltro, setValorDoFiltro }) {
       <div>
         <Logo />
       </div>
-      <Search
+      <Search className="Searchh"
         valorDoFiltro={valorDoFiltro}
         setValorDoFiltro={setValorDoFiltro}
       />
@@ -46,6 +49,11 @@ export default function Menu({ valorDoFiltro, setValorDoFiltro }) {
 const SvgTheme = styled.div`
   .pathB {
     fill: ${({ theme }) => theme.svgT};
+  }
+  @media (max-width: 768px) {
+    svg {
+      display: none;
+    }
   }
 `;
 

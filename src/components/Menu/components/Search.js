@@ -28,9 +28,21 @@ const StyledSearch = styled.div`
     border-left: 1px solid ${({ theme }) => theme.borderBase};
     width: 40px;
     height: 40px;
-    @media (min-width: 600px) {
+    @media (min-width: 768px) {
       width: 64px;
       height: 40px;
+    }
+  }
+  @media (max-width: 768px) {
+    border: none;
+    input {
+      width: 62%;
+      padding: none;
+      height: 40px;
+      border: none;
+    }
+    button {
+      display: none;
     }
   }
 `;

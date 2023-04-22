@@ -42,7 +42,7 @@ export const StyledRegisterVideo = styled.div`
     border-radius: 2px;
     cursor: pointer;
     color: inherit;
-    margin-top: 20px;
+    margin-top: 7.5px;
   }
   form {
     width: 100%;
@@ -106,5 +106,29 @@ export const StyledRegisterVideo = styled.div`
     background-color: #f9f9f9;
     color: ${({ theme }) => theme.textColorBase};
     background-color: ${({ theme }) => theme.backgroundBase};
+  }
+  @media (max-width: 768px) {
+    .add-video {
+      width: 35px;
+      height: 35px;
+      font-size: 24px;
+      color: inherit;
+      position: absolute;
+      //bottom: 16px;
+      // margin-right: -106px;
+      // margin-left: 70px;
+      border: 0;
+      margin-top: 159.8%;
+      margin-left: 23.2%;
+      background-color: rgb(0, 74, 173);
+      border-radius: 50%;
+      z-index: 99;
+      cursor: pointer;
+    }
+    form {
+      & div {
+        width: 70%;
+      }
+    }
   }
 `;

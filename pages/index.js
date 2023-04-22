@@ -156,6 +156,15 @@ const StyledDivV = styled.div`
       height: 25px;
     }
   }
+  @media (max-width: 768px) {
+    width: 85%;
+    flex-direction: column;
+    img {
+      width: 85%;
+      height: 55%;
+      margin-bottom: -20px
+    }
+  }
 `;
 
 const StyleDivVV = styled.div`
