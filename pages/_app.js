@@ -1,6 +1,7 @@
 import { ThemeProvider } from "styled-components";
 import { CSSReset } from "../src/components/CSSReset";
 import { useContext } from "react";
+import { Analytics } from '@vercel/analytics/react';
 import ColorModeProvider, {
   colorModeContext,
 } from "../src/components/Menu/components/ColorMode";
@@ -70,6 +71,7 @@ export default function _App(props) {
         <link rel="shortcut icon" href='favicon/favicon.ico' />
       </Head>
       <Root {...props} />
+      <Analytics />
     </ProviderWrapper>
   );
 }
