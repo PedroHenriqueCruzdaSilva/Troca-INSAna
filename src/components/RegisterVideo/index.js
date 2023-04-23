@@ -87,6 +87,7 @@ export default function RegisterVideo() {
             </button>
             <label>Insita o Titulo do Item que sera cadastrado</label>
             <input
+              required
               placeholder="Título do item"
               value={formCadastro.values.titulo}
               name="titulo"
@@ -96,6 +97,7 @@ export default function RegisterVideo() {
               Insira seu e-mail para alguem entrar em contato com você e trocar  o item por outro
             </label>
             <input
+              required
               type="email"
               placeholder="Example@example.com"
               name="email"
@@ -112,6 +114,7 @@ export default function RegisterVideo() {
             />
             <label>Insira a Url da imagem do produto</label>
             <input
+              required
               type="text"
               name="thumb"
               onChange={formCadastro.handleChange}
@@ -120,6 +123,7 @@ export default function RegisterVideo() {
             <input type="file" accept="image/*" name="thumb" onChange={(e) => uploadImage(e)} /> */}
             <label className="labell">Selecione a categoria:</label>
             <select
+              required
               name="categoria"
               onChange={formCadastro.handleChange}
               value={formCadastro.values.categoria}
@@ -132,7 +136,7 @@ export default function RegisterVideo() {
               <option value="Tênis">Tênis</option>
             </select>
             <label>Insira uma senha para deletar após a troca</label>
-            <input type="password" name="password" onChange={formCadastro.handleChange} />
+            <input required type="password" name="password" onChange={formCadastro.handleChange} />
             <button type="submit">Cadastrar Produto</button>
           </div>
         </form>
