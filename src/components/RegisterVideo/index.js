@@ -118,7 +118,7 @@ export default function RegisterVideo() {
             />
             { /*<label>Insira a imagem do produto</label>
             <input type="file" accept="image/*" name="thumb" onChange={(e) => uploadImage(e)} /> */}
-            <label>Selecione a categoria:</label>
+            <label className="labell">Selecione a categoria:</label>
             <select
               name="categoria"
               onChange={formCadastro.handleChange}
