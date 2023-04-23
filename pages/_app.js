@@ -16,10 +16,12 @@ const theme = {
     borderBase: "#e5e5e5",
     textColorBase: "#222222",
     textColorP: "#000000",
+    textColorButton: "#fff",
     scrollBar: "rgb(0, 0, 0, 0)",
     scrollBarThumb: "#000",
     backgroundP: "#FFF",
     svgT: "#000",
+    deletarColorBackground: "red",
   },
   dark: {
     backgroundBase: "#181818",
@@ -29,10 +31,12 @@ const theme = {
     borderBase: "#383838",
     textColorBase: "#FFFFFF",
     textColorP: "#000000",
+    textColorButton: "#000",
     scrollBar: "rgb(225, 225, 225, 0)",
     scrollBarThumb: "#FFF",
     backgroundP: "#FFF",
     svgT: "#FFF",
+    deletarColorBackground: "blue",
   },
 };
 

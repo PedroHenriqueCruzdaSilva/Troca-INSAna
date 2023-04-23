@@ -6,6 +6,8 @@ import { StyledTimeline } from "../src/components/Timeline";
 import { useEffect, useState } from "react";
 // import { createClient } from '@supabase/supabase-js'
 import { videoService } from "../src/services/videosService";
+import { createClient } from "@supabase/supabase-js";
+
 const service = videoService();
 
 //const PROJECT_URL = "https://jkqecgkaxjgokqbrxyca.supabase.co";
@@ -120,7 +122,6 @@ const StyledDivV = styled.div`
     right: 2.5px;
     border: none;
     background-color: transparent;
-    background-color: transparent;
     font-size: 15px;
     color: ${({ theme }) => theme.textColorBase};
     padding: 8px;
@@ -143,15 +144,44 @@ const StyledDivV = styled.div`
     h3 {
       font-size: 25px;
       margin-bottom: 20px;
-      text-align: center;
+      color: ${({ theme }) => theme.textColorBase};
     }
     p {
       margin-top: 10px;
       margin-bottom: 10px;
+      color: ${({ theme }) => theme.textColorBase};
     }
-    input {
-      width: 100%;
-      height: 25px;
+    form {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      input {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        width: 100%;
+        height: 25px;
+        border-radius: 2px;
+        border: 3px solid ${({ theme }) => theme.borderBase};
+        padding: 8px 10px;
+        outline: none;
+        color: #222222;
+        background-color: #f9f9f9;
+        color: ${({ theme }) => theme.textColorBase};
+        background-color: ${({ theme }) => theme.backgroundBase};
+      }
+      .deletar {
+        background-color: ${({ theme }) => theme.deletarColorBackground};
+        padding: 8px 16px;
+        border: none;
+        font-weight: bold;
+        font-size: 15px;
+        border-radius: 2px;
+        color: ${({ theme }) => theme.textColorButton};
+        cursor: pointer;
+        margin-top: 7.5px;
+      }
     }
   }
   @media (max-width: 768px) {
@@ -174,12 +204,26 @@ const StyleDivVV = styled.div`
   background-color: rgba(0, 0, 0, 0.5);
 `;
 
+const PROJECT_URL = "https://jkqecgkaxjgokqbrxyca.supabase.co";
+const PUBLIC_KEY =
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImprcWVjZ2theGpnb2txYnJ4eWNhIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODE4NDAzMjQsImV4cCI6MTk5NzQxNjMyNH0.tQjw3aO93jl_-BQfCZ6DutzVMoMxsh3AWJOLj2pZB3c";
+const supabase = createClient(PROJECT_URL, PUBLIC_KEY);
+
+
 function Timeline({ valorDoFiltro, ...props }) {
   const [divVisivel, setDivVisivel] = useState(false);
   const playlistNames = Object.keys(props.playlists);
   const [produto, setProduto] = useState(null);
+  const [senha, setSenha] = useState("");
   // const [exibirComponente, setExibirComponente] = useState(false);
   // const playlistNames = props.playlists?.length > 0 ? Object.keys(props.playlists) : [];
+
+  async function deleteVideo() {
+    const { error } = await supabase.from("itens").delete().eq("id", produto.id);
+    if (error) {
+      alert(error.message);
+    }
+  }
 
   return (
     <StyledTimeline>
@@ -227,6 +271,23 @@ function Timeline({ valorDoFiltro, ...props }) {
                     <h3>{produto.title}</h3>
                     <p>{produto.desc}</p>
                     <p>{produto.email}</p>
+                    <form onSubmit={(e) => {
+                        if(senha === produto.password){
+                          deleteVideo()
+                        } else {
+                          alert("Senha incorreta")
+                          e.preventDefault()
+                          e.stopPropagation()
+                          setSenha("")
+                          setProduto(null)
+                          setDivVisivel(false)
+                          return false;
+                        }
+                      }}>
+                        <label>Insira a senha para deletar o item</label>
+                        <input type="password" placeholder="Senha" value={senha} onChange={(e) => setSenha(e.target.value)} />
+                        <button type="submit" className="deletar">Deletar</button>
+                    </form>
                   </div>
                 </StyledDivV>
               </StyleDivVV>

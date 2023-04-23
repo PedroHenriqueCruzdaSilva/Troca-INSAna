@@ -31,7 +31,7 @@ export default function RegisterVideo() {
   const formCadastro = useForm({
     initialValues: {
       titulo: "",
-      // password: "",
+      password: "",
       email: "",
       desc: "",
       categoria: "Camisas",
@@ -131,8 +131,8 @@ export default function RegisterVideo() {
               <option value="Blusas">Blusas</option>
               <option value="Tênis">Tênis</option>
             </select>
-            {/*<label>Insira uma senha para deletar após a troca</label>
-            <input type="password" name="password" onChange={formCadastro.handleChange} />*/}
+            <label>Insira uma senha para deletar após a troca</label>
+            <input type="password" name="password" onChange={formCadastro.handleChange} />
             <button type="submit">Cadastrar Produto</button>
           </div>
         </form>
