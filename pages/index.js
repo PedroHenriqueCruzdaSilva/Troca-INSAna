@@ -219,11 +219,10 @@ function Timeline({ valorDoFiltro, ...props }) {
   // const playlistNames = props.playlists?.length > 0 ? Object.keys(props.playlists) : [];
 
   async function deleteVideo() {
-    const { error } = await supabase.from("itens").delete().eq("id", produto.id).then(
+    const { error } = await supabase.from("itens").delete().eq("id", produto.id);
       if(error){
         console.log(error.message)
       }
-    )
   }
 
   return (
@@ -273,7 +272,7 @@ function Timeline({ valorDoFiltro, ...props }) {
                     <p>{produto.desc}</p>
                     <p>{produto.email}</p>
                     <form onSubmit={(e) => {
-                        if(senha === produto.password){
+                        if(senha == produto.password){
                           deleteVideo()
                         } else {
                           alert("Senha incorreta")
