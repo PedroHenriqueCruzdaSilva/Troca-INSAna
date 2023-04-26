@@ -79,6 +79,7 @@ const StyledHeader = styled.div`
 const StyledBanner = styled.div`
   background-color: #570060;
   background-image: url(${({ bg }) => bg});
+  background-repeat: no-repeat;
   height: 230px;
   width: 100%;
   margin-top: 55px;
