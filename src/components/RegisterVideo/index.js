@@ -110,6 +110,7 @@ export default function RegisterVideo() {
               cols="50"
               value={formCadastro.values.desc}
               name="desc"
+              placeholder="Tamanho, Uso"
               onChange={formCadastro.handleChange}
             />
             <label>Insira a Url da imagem do produto</label>
