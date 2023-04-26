@@ -134,6 +134,7 @@ export default function RegisterVideo() {
               <option value="Meias">Meias</option>
               <option value="Blusas">Blusas</option>
               <option value="Tênis">Tênis</option>
+              <option value="Boné">Tênis</option>
             </select>
             <label>Insira uma senha para deletar após a troca</label>
             <input required type="password" name="password" onChange={formCadastro.handleChange} />
