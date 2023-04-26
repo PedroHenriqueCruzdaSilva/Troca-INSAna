@@ -228,7 +228,8 @@ function Timeline({ valorDoFiltro, ...props }) {
 
   return (
     <StyledTimeline>
-      {playlistNames.map((playlistName) => {
+      {
+      playlistNames.map((playlistName) => {
         const videos = props.playlists[playlistName];
         return (
           <>
@@ -254,7 +255,8 @@ function Timeline({ valorDoFiltro, ...props }) {
                             <img src={video.thumb} />
                             <span>{video.title}</span>
                           </a>
-                        )}
+                        )
+                      }
                       </React.Fragment>
                     );
                   })}
