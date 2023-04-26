@@ -67,7 +67,8 @@ export default function RegisterVideo() {
               })
               .then((oqueveio) => {
                 oqueveio;
-                window.location.reload();
+                alert("Por favor, aguarde a checagem do item para ele ser adicionado")
+                setFormVisivel(false)
               })
               .catch((err) => {
                 console.log(err);
