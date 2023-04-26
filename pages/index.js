@@ -88,7 +88,7 @@ const StyledBanner = styled.div`
 function Header() {
   return (
     <StyledHeader>
-      <StyledBanner bg={config.bg} />
+      <StyledBanner bg={config.bg} width="230px" height="1337px" />
       <section className="user-info">
         <img
           className="perfil-foto"
