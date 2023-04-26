@@ -94,12 +94,12 @@ export default function RegisterVideo() {
               onChange={formCadastro.handleChange}
             />
             <label>
-              Insira seu e-mail para alguem entrar em contato com você e trocar  o item por outro
+              Insira seu e-mail ou seu @ do instagram para alguem entrar em contato com você e trocar  o item por outro
             </label>
             <input
               required
-              type="email"
-              placeholder="Example@example.com"
+              type="text"
+              placeholder="Example@example.com ou @example"
               name="email"
               value={formCadastro.values.email}
               onChange={formCadastro.handleChange}
