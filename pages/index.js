@@ -219,12 +219,14 @@ function Timeline({ valorDoFiltro, ...props }) {
   // const playlistNames = props.playlists?.length > 0 ? Object.keys(props.playlists) : [];
 
   async function deleteVideo() {
-    const { data ,error } = await supabase.from("itens").delete().eq("id", produto.id);
-    if (error) {
-      alert(error.message);
-    } elif (data) {
-      alert("Produto Apagado com sucesso")
-    }
+    const { data ,error } = await supabase.from("itens").delete().eq("id", produto.id).then(
+      if(error){
+        alert(error.message)
+      }
+      elif(data){
+        alert("Deletado Com sucesso")
+      }
+    )
   }
 
   return (
