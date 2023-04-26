@@ -89,7 +89,7 @@ function Header() {
   return (
     <StyledHeader>
       <StyledBanner bg={config.bg} />
-      <section className="user-info">
+      {/*<section className="user-info">
         <img
           className="perfil-foto"
           src={`https://github.com/${config.github}.png`}
@@ -98,7 +98,7 @@ function Header() {
           <h2>{config.name}</h2>
           <p>{config.description}</p>
         </div>
-      </section>
+      </section>*/}
     </StyledHeader>
   );
 }
