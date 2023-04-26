@@ -244,7 +244,7 @@ function Timeline({ valorDoFiltro, ...props }) {
                   .map((video) => {
                     return (
                       <React.Fragment key={video.id}>
-                        {produto.admC == "S" (
+                        {video.admC == "S" (
                           <a
                             onClick={() => {
                               setDivVisivel(true);
