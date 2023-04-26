@@ -67,7 +67,7 @@ export default function RegisterVideo() {
               })
               .then((oqueveio) => {
                 oqueveio;
-                window.location.reload();
+                setFormVisivel(false);
               })
               .catch((err) => {
                 console.log(err);
