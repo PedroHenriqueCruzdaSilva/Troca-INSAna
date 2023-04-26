@@ -244,15 +244,17 @@ function Timeline({ valorDoFiltro, ...props }) {
                   .map((video) => {
                     return (
                       <React.Fragment key={video.id}>
-                        <a
-                          onClick={() => {
-                            setDivVisivel(true);
-                            setProduto(video);
-                          }}
-                        >
-                          <img src={video.thumb} />
-                          <span>{video.title}</span>
-                        </a>
+                        {video.admC == true (
+                          <a
+                            onClick={() => {
+                              setDivVisivel(true);
+                              setProduto(video);
+                            }}
+                          >
+                            <img src={video.thumb} />
+                            <span>{video.title}</span>
+                          </a>
+                        )}
                       </React.Fragment>
                     );
                   })}
