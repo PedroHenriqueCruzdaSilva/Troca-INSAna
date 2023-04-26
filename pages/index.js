@@ -216,21 +216,19 @@ function Timeline({ valorDoFiltro, ...props }) {
   const playlistNames = Object.keys(props.playlists);
   const [produto, setProduto] = useState(null);
   const [senha, setSenha] = useState("");
-
   // const [exibirComponente, setExibirComponente] = useState(false);
   // const playlistNames = props.playlists?.length > 0 ? Object.keys(props.playlists) : [];
 
   function deleteVideo() {
     const { error } = supabase.from("itens").delete().eq("id", produto.id);
-    if (error) {
-      alert(error.message);
-    }
+      if(error){
+        console.log(error.message)
+      }
   }
 
   return (
     <StyledTimeline>
-      {
-      playlistNames.map((playlistName) => {
+      {playlistNames.map((playlistName) => {
         const videos = props.playlists[playlistName];
         return (
           <>
@@ -246,17 +244,15 @@ function Timeline({ valorDoFiltro, ...props }) {
                   .map((video) => {
                     return (
                       <React.Fragment key={video.id}>
-                        {video.admC == TRUE && (
-                          <a
-                            onClick={() => {
-                              setDivVisivel(true);
-                              setProduto(video);
-                            }}
-                          >
-                            <img src={video.thumb} />
-                            <span>{video.title}</span>
-                          </a>
-                        )}
+                        <a
+                          onClick={() => {
+                            setDivVisivel(true);
+                            setProduto(video);
+                          }}
+                        >
+                          <img src={video.thumb} />
+                          <span>{video.title}</span>
+                        </a>
                       </React.Fragment>
                     );
                   })}
@@ -277,7 +273,7 @@ function Timeline({ valorDoFiltro, ...props }) {
                     <p>{produto.desc}</p>
                     <p>{produto.email}</p>
                     <form onSubmit={(e) => {
-                        if(senha === produto.password){
+                        if(senha == produto.password){
                           deleteVideo()
                         } else {
                           alert("Senha incorreta")
