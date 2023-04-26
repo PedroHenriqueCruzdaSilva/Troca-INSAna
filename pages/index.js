@@ -289,7 +289,7 @@ function Timeline({ valorDoFiltro, ...props }) {
                           return false;
                         }
                       }}>
-                        <label>Insira a senha para deletar o item</label>
+                        <label>Insira a senha para deletar o item (caso a esqueça mande uma mensagem com o email que você colocou no produto para o email: )</label>
                         <input type="password" placeholder="Senha" value={senha} onChange={(e) => setSenha(e.target.value)} />
                         <button type="submit" className="deletar">Deletar</button>
                     </form>
