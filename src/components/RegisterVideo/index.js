@@ -67,7 +67,7 @@ export default function RegisterVideo() {
               })
               .then((oqueveio) => {
                 oqueveio;
-                window.location.reload();
+                setFormVisivel(false)
               })
               .catch((err) => {
                 console.log(err);
@@ -94,7 +94,7 @@ export default function RegisterVideo() {
               onChange={formCadastro.handleChange}
             />
             <label>
-              Insira seu e-mail ou seu @ do instagram para alguem entrar em contato com você e trocar  o item por outro
+              Insira seu e-mail para alguem entrar em contato com você e trocar  o item por outro
             </label>
             <input
               required
@@ -110,6 +110,7 @@ export default function RegisterVideo() {
               cols="50"
               value={formCadastro.values.desc}
               name="desc"
+              placeholder="Tamanho, Uso"
               onChange={formCadastro.handleChange}
             />
             <label>Insira a Url da imagem do produto</label>
@@ -134,6 +135,7 @@ export default function RegisterVideo() {
               <option value="Meias">Meias</option>
               <option value="Blusas">Blusas</option>
               <option value="Tênis">Tênis</option>
+              <option value="Boné">Boné</option>
             </select>
             <label>Insira uma senha para deletar após a troca</label>
             <input required type="password" name="password" onChange={formCadastro.handleChange} />

@@ -79,6 +79,7 @@ const StyledHeader = styled.div`
 const StyledBanner = styled.div`
   background-color: #570060;
   background-image: url(${({ bg }) => bg});
+  background-repeat: no-repeat;
   height: 230px;
   width: 100%;
   margin-top: 55px;
@@ -215,11 +216,12 @@ function Timeline({ valorDoFiltro, ...props }) {
   const playlistNames = Object.keys(props.playlists);
   const [produto, setProduto] = useState(null);
   const [senha, setSenha] = useState("");
+
   // const [exibirComponente, setExibirComponente] = useState(false);
   // const playlistNames = props.playlists?.length > 0 ? Object.keys(props.playlists) : [];
 
-  async function deleteVideo() {
-    const { error } = await supabase.from("itens").delete().eq("id", produto.id);
+  function deleteVideo() {
+    const { error } = supabase.from("itens").delete().eq("id", produto.id);
     if (error) {
       alert(error.message);
     }
@@ -227,7 +229,8 @@ function Timeline({ valorDoFiltro, ...props }) {
 
   return (
     <StyledTimeline>
-      {playlistNames.map((playlistName) => {
+      {
+      playlistNames.map((playlistName) => {
         const videos = props.playlists[playlistName];
         return (
           <>
@@ -243,15 +246,17 @@ function Timeline({ valorDoFiltro, ...props }) {
                   .map((video) => {
                     return (
                       <React.Fragment key={video.id}>
-                        <a
-                          onClick={() => {
-                            setDivVisivel(true);
-                            setProduto(video);
-                          }}
-                        >
-                          <img src={video.thumb} />
-                          <span>{video.title}</span>
-                        </a>
+                        {video.admC == TRUE && (
+                          <a
+                            onClick={() => {
+                              setDivVisivel(true);
+                              setProduto(video);
+                            }}
+                          >
+                            <img src={video.thumb} />
+                            <span>{video.title}</span>
+                          </a>
+                        )}
                       </React.Fragment>
                     );
                   })}
