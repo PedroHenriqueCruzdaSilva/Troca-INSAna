@@ -45,7 +45,7 @@ export default function HomePage() {
 
       setPlaylists(novasPlaylists);
     });
-  }, [playlists]);
+  }, []);
 
   return (
     <div className="Page">
